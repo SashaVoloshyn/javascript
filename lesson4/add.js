@@ -46,14 +46,20 @@ let x1 = sum([1, 3, 4, 5, 6,4], [1, 3, 2, 1, 1,4]);
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
 
+let array = [{name: 'Dima', age: 13}, {model: 'Camry'}];
 
-// function keyObj(arr) {
-//     let a =[]
-//     for (let arrayEl of arr) {
-//         a = Object.keys(arrayEl);
-//     }
-//     return a;
-//
-// }
+function keyObj(arr) {
+    let a =[]
+    for (let obj of arr) {
+        a.push(Object.values(obj));
 
-// let x1 = keyObj(array);
+    }
+
+    return a;
+
+
+}
+
+let x1 = keyObj(array);
+document.write(x1);
+
