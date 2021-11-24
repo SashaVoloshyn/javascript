@@ -65,14 +65,25 @@
 // [0,1,2,3,4] => [1,2,3,4,0]
 // [0,0,1,0]   => [1,0,0,0]
 
-let arr = [1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0];
+let arr = [1, 0, 2, 0,33,44,0,55, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0];
 
-let xxx = (arr, a) => {
+let xxx = (arr) => {
     if (arr.length >= 2 && arr.length <= 100) {
-        for (const arrElement of arr) {
-            let index = arr[0];
+        for (let i = 0; i <arr.length; i++) {
+            for (let j = i + 1; j <arr.length ; j++) {
+                if (arr[i]===0) {
+                    let indx = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = indx;
+
+                }
+
+
+            }
+
 
         }
+        console.log(arr);
 
     }
     else {
@@ -80,3 +91,5 @@ let xxx = (arr, a) => {
     }
 
 };
+
+xxx(arr);
