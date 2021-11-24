@@ -24,7 +24,6 @@ console.log(x1,x2);*/
     return result;
 }
 
-
 let x1 = skola(4);
 let x2 = skola(11);
 console.log(x1,x2);*/
