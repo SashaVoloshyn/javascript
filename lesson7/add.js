@@ -90,3 +90,24 @@
 // console.log(tegOption);
 // const tegSelect = new Tegs('select', ' позволяет создать элемент интерфейса в виде раскрывающегося списка, а также список с одним или множественным выбором', 'multiple', 'Позволяет одновременно выбирать сразу несколько элементов списка.', 'required', 'Список обязателен для выбора перед отправкой формы.');
 // console.log(tegSelect);
+
+function userCard(number) {
+    if (number >= 1 && number <= 3) {
+        let card = {
+            balance: 100,
+            transactionLimit: 100,
+            historyLogs: [],
+            key: number,
+
+        };
+        return {
+            getCardOption: function () {
+                return card;
+            }
+        }
+
+    }
+    else {
+        console.log(`-_-`);
+    }
+}
