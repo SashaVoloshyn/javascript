@@ -100,11 +100,7 @@ function userCard(number) {
             key: number,
 
         };
-        return {
-            getCardOption: function () {
-                return card;
-            }
-        }
+        return
 
     }
     else {
