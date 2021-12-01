@@ -23,7 +23,7 @@
 //     new User(6,'Vika','Akiv','Akiv@gmail.com',380777777777),
 //     new User(8,'Leyla','Alyel','Alyel@gmail.com',380888888888),
 //     new User(10,'Anya','Ayna','Ayna@gmail.com',380999999999),
-//     new User(9,'Vova','Avov','Avov@gmail.com',380101011010),
+//     new User(9,'Vova','Avov','Avov@gmail.com',380101011010)
 // ];
 // console.log(array);
 //
@@ -68,7 +68,7 @@
 //     new Client(13,'Vika','Akiv','Akiv@gmail.com',380777777777,['phone','book','item3','book2']),
 //     new Client(222,'Leyla','Alyel','Alyel@gmail.com',380888888888,['phone','book','item3','book2','book3','book4','book5','book6','boo7']),
 //     new Client(432,'Anya','Ayna','Ayna@gmail.com',380999999999,['phone','book','item3','book2','book3','book4']),
-//     new Client(431,'Vova','Avov','Avov@gmail.com',380101011010,['phone','book','item3','book2','book3','book43']),
+//     new Client(431,'Vova','Avov','Avov@gmail.com',380101011010,['phone','book','item3','book2','book3','book43'])
 // ];
 // console.log(clientArr);
 //
