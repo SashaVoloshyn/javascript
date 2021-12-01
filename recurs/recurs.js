@@ -85,15 +85,16 @@ document.write(x);
 // // Разрешена только рекурсия и целочисленная арифметика.
 //
 //
-//
-// function f(n) {
-//     if (n <= 0) {
-//         return;
-//     }
-//     let a = n % 10;
-//     let b = (n - a) / 10;
-//     console.log(a);
-//     f(b);
-// }
-//
-// f(1);
+
+
+function f(n) {
+    if (n <= 0) {
+        return;
+    }
+    let a = n % 10;
+    let b = (n - a) / 10;
+    console.log(a);
+    f(b);
+}
+
+f();
