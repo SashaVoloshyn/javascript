@@ -43,21 +43,6 @@
         let email = document.createElement('div');
         email.innerText = userElement.email;
 
-        let phone = document.createElement('div');
-        phone.innerText = userElement.phone;
-
-        let website = document.createElement('div');
-        website.innerText = `${userElement.website}`;
-
-
-        let company = document.createElement('div');
-        for (const compEl in userElement.company) {
-            let companyEl = document.createElement('div');
-            companyEl.innerText = `${compEl}: ${userElement.company[compEl]}`;
-            company.appendChild(companyEl);
-
-        }
-
         let adress = document.createElement('div');
         for (const addressKey in userElement.address) {
             let adressEl = document.createElement('div');
@@ -77,14 +62,31 @@
 
         }
 
+        let phone = document.createElement('div');
+        phone.innerText = userElement.phone;
+
+        let website = document.createElement('div');
+        website.innerText = `${userElement.website}`;
+
+
+        let company = document.createElement('div');
+        for (const compEl in userElement.company) {
+            let companyEl = document.createElement('div');
+            companyEl.innerText = `${compEl}: ${userElement.company[compEl]}`;
+            company.appendChild(companyEl);
+
+        }
+
+
+
         users.appendChild(id);
         users.appendChild(name);
         users.appendChild(username);
         users.appendChild(email);
+        users.appendChild(adress);
         users.appendChild(phone);
         users.appendChild(website);
         users.appendChild(company);
-        users.appendChild(adress);
 
 
 
