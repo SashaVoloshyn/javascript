@@ -53,8 +53,16 @@
         let company = document.createElement('div');
         for (const compEl in userElement.company) {
             let companyEl = document.createElement('div');
-            companyEl.innerText = `${compEl}: ${userElement[compEl]}`;
+            companyEl.innerText = `${compEl}: ${userElement.company[compEl]}`;
             company.appendChild(companyEl);
+
+        }
+
+        let adress = document.createElement('div');
+        for (const addressKey in userElement.address) {
+            let adressEl = document.createElement('div');
+            adressEl.innerText = `${addressKey} : ${userElement.address[addressKey]}`;
+            adress.appendChild(adressEl);
 
         }
 
@@ -65,6 +73,7 @@
         users.appendChild(phone);
         users.appendChild(website);
         users.appendChild(company);
+        users.appendChild(adress);
 
 
 
