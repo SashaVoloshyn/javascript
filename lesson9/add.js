@@ -47,20 +47,16 @@
         phone.innerText = userElement.phone;
 
         let website = document.createElement('div');
-        website.innerText = userElement.website;
+        website.innerText = `${userElement.website}`;
+
 
         let company = document.createElement('div');
-        for (const companyEl of userElement.company) {
-            let companyDiv = document.createElement('div');
-            let txt = '';
-            for (const inEl in companyEl) {
-                txt += `${inEl}: ${companyEl[inEl]}`;
-            }
-            companyDiv.innerText = txt;
-            company.appendChild(companyDiv);
+        for (const compEl in userElement.company) {
+            let companyEl = document.createElement('div');
+            companyEl.innerText = `${compEl}: ${userElement[compEl]}`;
+            company.appendChild(companyEl);
 
         }
-
 
         users.appendChild(id);
         users.appendChild(name);
