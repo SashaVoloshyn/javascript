@@ -63,6 +63,17 @@
             let adressEl = document.createElement('div');
             adressEl.innerText = `${addressKey} : ${userElement.address[addressKey]}`;
             adress.appendChild(adressEl);
+            if (typeof userElement.address[addressKey] === 'object') {
+                adressEl.innerText = `${addressKey} :`;
+                let  test = document.createElement('div')
+                adressEl.appendChild(test);
+                for (const addressKeyKey in userElement.address[addressKey]) {
+                    let adr = document.createElement('div');
+                    adr.innerText = `${addressKeyKey}:  ${userElement.address[addressKey][addressKeyKey]}`;
+                    adr.style.paddingLeft = '40px'
+                    test.appendChild(adr);
+                }
+            }
 
         }
 
