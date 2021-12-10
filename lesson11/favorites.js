@@ -1,5 +1,4 @@
 let favorits = JSON.parse(localStorage.getItem('favorites'));
-console.log(favorits);
 
 for (const favorit of favorits) {
     let favorWrap = document.createElement('div');
