@@ -27,16 +27,10 @@ for (const user of users) {
     let btn = document.createElement('button');
     btn.innerText = 'add to favorite';
     btn.onclick = function () {
-        let favorites = JSON.parse(localStorage.getItem('favorites'));
-        if (favorites) {
-            let favorites = [];
-            favorites.push(user);
-            localStorage.setItem('favorites', JSON.stringify(user));
-        } else {
-            favorites.push(user);
-            localStorage.setItem('favorites', JSON.stringify(user));
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        favorites.push(user);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
 
-        }
     };
 
 
