@@ -52,7 +52,27 @@ fetch('https://jsonplaceholder.typicode.com/users')
                             let card = document.createElement('div');
                             card.classList.add('card');
                             card.innerHTML = `<h2>ID: ${post.id}</h2> <h3>Title: ${post.title}</h3> <p><strong>Body:</strong> ${post.body}</p>`;
+                            let btn = document.createElement('button');
+                            btn.innerText = 'click ME';
 
+                            btn.onclick=()=>{
+                                fetch('https://jsonplaceholder.typicode.com/posts/' + post.id + '/comments')
+                                    .then(response => response.json())
+                                    .then(comments =>{
+                                        for (const comment of comments) {
+                                            let cardComment = document.createElement('div');
+                                            cardComment.classList.add('cardComment');
+                                            cardComment.innerHTML = `<h2>ID: ${comment.id}</h2> <h3>Name: ${comment.name}</h3> <h3>Email: ${comment.email}</h3> <p><strong>Body:</strong> ${comment.body}</p>`;
+
+                                            card.append(cardComment);
+                                        }
+                                        btn.disabled = true;
+                                    })
+
+                            }
+
+
+                            card.append(btn);
                             userCard.append(card);
                         }
                         button.disabled = true;
