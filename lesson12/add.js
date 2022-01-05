@@ -77,9 +77,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
                         }
                         button.disabled = true;
 
-
-
-
                     });
 
             };
