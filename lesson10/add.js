@@ -83,16 +83,98 @@
 //     document.body.appendChild(popup);
 // });
 
-let usersWithAddress = [
-    {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-    {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-    {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-    {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-    {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-    {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-    {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-    {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-    {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
-];
+
+// - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+// 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+// 2й - оставляет старше 29 лет включительно
+// 3й - оставляет тех у кого город киев
+// Данные выводить в документ
+// let users = [
+//     {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//     {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+//     {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+//     {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+//     {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+//     {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+//     {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+//     {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+//     {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+//     {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//     {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+// ];
+//
+// let form1 = document.forms.form1;
+//
+// form1.onsubmit = function (event) {
+//     event.preventDefault();
+//     if (this.kievFilter.checked && this.ageFilter.checked && this.falseFfilter.checked) {
+//         let filterAll = users.filter(value => value.address.city === "Kyiv" && value.age > 28 && !value.status);
+//         for (const filter of filterAll) {
+//             let wrap = document.createElement('div');
+//             wrap.innerHTML = `<h3> ${filter.name} ${filter.age} ${filter.address.city} ${filter.status}</h3>`;
+//
+//             document.body.appendChild(wrap);
+//         }
+//
+//
+//     } else if (this.kievFilter.checked && this.ageFilter.checked) {
+//         let filterAll = users.filter(value => value.address.city === "Kyiv" && value.age > 28);
+//         for (const filter of filterAll) {
+//             let wrap = document.createElement('div');
+//             wrap.innerHTML = `<h3> ${filter.name} ${filter.age} ${filter.address.city} ${filter.status}</h3>`;
+//
+//             document.body.appendChild(wrap);
+//         }
+//
+//
+//     } else if (this.ageFilter.checked && this.falseFfilter.checked) {
+//         let filterAll = users.filter(value => value.age > 28 && !value.status);
+//         for (const filter of filterAll) {
+//             let wrap = document.createElement('div');
+//             wrap.innerHTML = `<h3> ${filter.name} ${filter.age} ${filter.address.city} ${filter.status}</h3>`;
+//
+//             document.body.appendChild(wrap);
+//         }
+//
+//
+//     }else if (this.kievFilter.checked && this.falseFfilter.checked) {
+//         let filterAll = users.filter(value => value.address.city === "Kyiv" && !value.status);
+//         for (const filter of filterAll) {
+//             let wrap = document.createElement('div');
+//             wrap.innerHTML = `<h3> ${filter.name} ${filter.age} ${filter.address.city} ${filter.status}</h3>`;
+//
+//             document.body.appendChild(wrap);
+//         }
+//
+//
+//     }else if (this.kievFilter.checked) {
+//         let filterAll = users.filter(value => value.address.city === "Kyiv");
+//         for (const filter of filterAll) {
+//             let wrap = document.createElement('div');
+//             wrap.innerHTML = `<h3> ${filter.name} ${filter.age} ${filter.address.city} ${filter.status}</h3>`;
+//
+//             document.body.appendChild(wrap);
+//         }
+//
+//
+//     }else if (this.falseFfilter.checked) {
+//         let filterAll = users.filter(value => !value.status);
+//         for (const filter of filterAll) {
+//             let wrap = document.createElement('div');
+//             wrap.innerHTML = `<h3> ${filter.name} ${filter.age} ${filter.address.city} ${filter.status}</h3>`;
+//
+//             document.body.appendChild(wrap);
+//         }
+//
+//
+//     }else if (this.ageFilter.checked) {
+//         let filterAll = users.filter(value => value.age > 28);
+//         for (const filter of filterAll) {
+//             let wrap = document.createElement('div');
+//             wrap.innerHTML = `<h3> ${filter.name} ${filter.age} ${filter.address.city} ${filter.status}</h3>`;
+//
+//             document.body.appendChild(wrap);
+//         }
+//     }
+//
+// };
