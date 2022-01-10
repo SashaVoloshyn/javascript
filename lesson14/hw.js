@@ -114,3 +114,127 @@
 //         console.log('error', reason);
 //     });
 
+// function wakeUp(isWorkingDay = true,cb) {
+//         setTimeout(() => {
+//             if (isWorkingDay) {
+//                 cb(null,'wakeUp');
+//                 return
+//             }
+//             cb('sleep');
+//         }, 1000);
+// }
+//
+// function goEat(eat,cb) {
+//         setTimeout(() => {
+//             if (eat) {
+//                 cb(null,`cooking and eat ${eat}`);
+//                 return
+//             }
+//             cb('немає продуктів');
+//
+//         },700);
+//
+// }
+//
+// function goWork(cb) {
+//         setTimeout(() => {
+//           return   cb(null,'working -_-');
+//         }, 600);
+// }
+//
+// function backToHome(cb) {
+//         setTimeout(() => {
+//            return  cb(null,'back to home');
+//         },2000);
+// }
+//
+// function goToShower(cb) {
+//         setTimeout(() => {
+//            return  cb(null,'waaaaashhhh');
+//         },4000);
+// }
+//
+// function eveningMeal(eat, cb) {
+//     setTimeout(() => {
+//        return  cb(null, `cooking and eat  ${eat}`);
+//     }, 350);
+// }
+//
+// function rest(cb) {
+//     setTimeout(() => {
+//        return  cb(null, 'reeeest');
+//     }, 6000);
+// }
+//
+// function goSleep(cb) {
+//     setTimeout(() => {
+//        return  cb(null,'sleeeeeeeeep');
+//     }, 300);
+// }
+//
+// wakeUp(true, (err, morning) => {
+//     if (err) {
+//         return console.error('oops', err);
+//     }
+//      console.log(morning);
+//
+//     goEat('pyureshka', (err, lunch) => {
+//         if (err) {
+//             console.error('oops', err);
+//             return
+//         }
+//
+//         console.log(lunch);
+//
+//         goWork((err, task) => {
+//             if (err) {
+//                 console.error('oops', err);
+//                 return
+//             }
+//             console.log(task);
+//
+//             backToHome((err, backHome) => {
+//                 if (err) {
+//                     console.error('oops', err);
+//                     return
+//                 }
+//                 console.log(backHome);
+//
+//                 goToShower((err, wash) => {
+//                     if (err) {
+//                         console.error('oops', err);
+//                         return
+//                     }
+//                     console.log(wash);
+//
+//                     eveningMeal('makarohi', (err, food) => {
+//                         if (err) {
+//                             console.error('oops', err);
+//                             return
+//                         }
+//                         console.log(food);
+//
+//                         rest((err, rest) => {
+//                             if (err) {
+//                                 console.error('oops', err);
+//                                 return
+//                             }
+//                             console.log(rest);
+//
+//                             goSleep((err, sleep) => {
+//                                 if (err) {
+//                                     console.error('oops', err);
+//                                     return
+//                                 }
+//
+//                                 console.log(sleep);
+//                             });
+//                         });
+//                     });
+//                 });
+//             });
+//         });
+//
+//     });
+// });
+
