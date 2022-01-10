@@ -238,3 +238,103 @@
 //     });
 // });
 
+
+
+function wakeUp(isWorkingDay = true) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (isWorkingDay) {
+                resolve('wakeUp');
+            }
+            reject('sleep');
+        }, 1000);
+    });
+}
+
+function goEat(eat) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (eat) {
+                resolve(`cooking and eat ${eat}`);
+            }
+            reject('немає продуктів');
+
+        },250);
+    });
+
+}
+
+function goWork() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('working -_-');
+        }, 1500);
+    });
+}
+
+function backToHome() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('back to home');
+        },2000);
+    });
+}
+
+function goToShower() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('waaaaashhhh');
+        },1000);
+    });
+}
+
+function eveningMeal(eat) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(`cooking and eat  ${eat}`);
+        },670);
+    });
+}
+
+function rest() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('reeeest');
+        },444);
+    });
+}
+
+function goSleep() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('sleeeeeeeeep');
+        }, 300);
+    });
+
+}
+
+
+async function result() {
+    const morning = await wakeUp(true);
+    const eat = await goEat('makarohi', morning);
+    const work = await goWork(eat);
+    const goHome = await backToHome(work);
+    const wash = await goToShower(goHome);
+    const foot = await eveningMeal('vareniki', wash);
+    const sleep = await rest(foot);
+    const nextDay = await goSleep(sleep);
+
+
+
+    console.log(morning);
+    console.log(eat);
+    console.log(work)
+    console.log(goHome);
+    console.log(wash);
+    console.log(foot);
+    console.log(sleep);
+    console.log(nextDay);
+}
+
+result();
+
