@@ -316,23 +316,27 @@ function goSleep() {
 
 async function result() {
     const morning = await wakeUp(true);
-    const eat = await goEat('makarohi', morning);
-    const work = await goWork(eat);
-    const goHome = await backToHome(work);
-    const wash = await goToShower(goHome);
-    const foot = await eveningMeal('vareniki', wash);
-    const sleep = await rest(foot);
-    const nextDay = await goSleep(sleep);
-
-
-
     console.log(morning);
+
+    const eat = await goEat('makarohi', morning);
     console.log(eat);
+
+    const work = await goWork(eat);
     console.log(work)
+
+    const goHome = await backToHome(work);
     console.log(goHome);
+
+    const wash = await goToShower(goHome);
     console.log(wash);
+
+    const foot = await eveningMeal('vareniki', wash);
     console.log(foot);
+
+    const sleep = await rest(foot);
     console.log(sleep);
+
+    const nextDay = await goSleep(sleep);
     console.log(nextDay);
 }
 
